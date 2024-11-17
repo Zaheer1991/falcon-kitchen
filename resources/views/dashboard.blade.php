@@ -1,0 +1,604 @@
+<x-app-layout>
+    @push('style')
+        <style>
+            .about-section {
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(20px); /* Slightly push down for animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation effects */
+}
+
+.about-section.visible {
+    opacity: 1; /* Visible when scrolled into view */
+    transform: translateY(0); /* Reset position */
+}
+
+.about-image {
+    position: relative; /* Position relative for child elements */
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Circle shape for the text/logo */
+.falconproksa-circle {
+    position: absolute;
+    bottom: -40px; /* Positioning it at the bottom */
+    right: -20px; /* Positioning it at the right */
+    width: 100px; /* Circle size */
+    height: 100px; /* Circle size */
+    background-color: #ff5722; /* Circle Color */
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: moveCircle 5s linear infinite; /* Infinite movement */
+}
+
+.falconproksa-text {
+    color: white; /* Text Color */
+    font-weight: bold; /* Text weight */
+    text-align: center; /* Center text */
+}
+@media (max-width: 640px) {
+
+    .banner-card{
+        display: none
+    }
+    .about-image,
+    .about-content {
+        width: 100%; /* Stack elements */
+        padding: 0 1rem; /* Optional padding */
+    }
+
+    .about-image {
+        margin-bottom: 1.5rem; /* Extra space between image and content */
+    }
+
+    .falconproksa-circle {
+        display: none; /* Hide on mobile */
+    }
+    .about-content h2 {
+        font-size: 1.875rem; /* Adjust h2 size for mobile (3xl) */
+    }
+
+    .about-content p {
+        font-size: 1rem; /* Adjust paragraph size for mobile (base) */
+    }
+}
+/* Move Circle Animation */
+@keyframes moveCircle {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-10px, 10px); /* Move slightly */
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    75% {
+        transform: translate(10px, -10px); /* Move back */
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+/* Keyframes for infinite scrolling */
+@keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-200%);
+      }
+    }
+
+    .slider {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .slider-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+    }
+
+    .slider-item {
+      flex-shrink: 0;
+      width: auto;
+      margin-right: 2rem;
+    }
+
+
+
+        </style>
+    @endpush
+    <!-- Preloader -->
+    <div
+        id="preloader"
+        class="fixed inset-0 bg-white flex items-center justify-center z-50"
+    >
+        <x-preloader />
+    </div>
+
+    <!-- Main Content -->
+    <div
+        class="relative bg-white"
+        style="opacity: 0; display: none"
+        id="main-content"
+    >
+        <!-- Navbar -->
+        <x-nav-link />
+
+        <!-- Welcome Section -->
+        <div
+            class="relative h-screen overflow-hidden flex items-center justify-center lg:px-8 lg:mx-3"
+        >
+            <img
+                src="{{ asset('asset/images/banner/banner-image1.jpg') }}"
+                alt="Banner"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div
+                class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50"
+            >
+                <h1
+                    class="text-3xl sm:text-4xl font-bold text-white text-center"
+                >
+                    Welcome to FalconProska
+                </h1>
+                <p class="text-lg sm:text-xl text-white text-center mt-2">
+                    A market leader in the field of commercial hospitality
+                    equipment
+                </p>
+            </div>
+
+            <!-- Card on the Left Side -->
+            <div
+                class="absolute left-6 top-1/2 transform -translate-y-1/2 z-10 max-w-sm bg-black text-white rounded-lg shadow-lg p-5 banner-card"
+            >
+                <h2 class="text-xl font-bold">Our Mission</h2>
+                <p class="mt-2">
+                    At FalconProska, we strive to provide our clients with
+                    exceptional hospitality equipment and solutions. Our mission
+                    is to ensure quality and reliability in every product we
+                    offer.
+                </p>
+                <a
+                    href="#"
+                    class="mt-3 inline-block text-blue-400 hover:text-blue-600"
+                    >Learn More</a
+                >
+            </div>
+        </div>
+
+        <!-- About Us Section -->
+        <section class="about-section py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start relative">
+                <div class="about-image w-full lg:w-1/2 pr-0 lg:pr-10 mb-8 lg:mb-0 relative">
+                    <img src="{{asset('asset/images/banner/banner-four-image.jpg')}}" alt="About Us Image" class="rounded shadow-lg w-full h-auto">
+                    <div class="falconproksa-circle hidden lg:block"> <!-- Hide on mobile and show on large screens -->
+                        <span class="falconproksa-text">Falconproksa</span>
+                    </div>
+                </div>
+                <div class="about-content w-full lg:w-1/2">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-5">About Us</h2> <!-- Adjusted text size for mobile -->
+                    <p class="text-base lg:text-lg mb-5"> <!-- Adjusted text size for mobile -->
+                        Welcome to our website! We are dedicated to providing the highest quality of service and value to our clients. Our team is committed to excellence and we strive to exceed your expectations.
+                    </p>
+                    <p class="text-base lg:text-lg"> <!-- Adjusted text size for mobile -->
+                        With years of experience in the industry, we are here to cater to your needs and ensure that you have a memorable experience. Get in touch with us today to learn more about what we can do for you!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Equipment in Stock Section -->
+        <h1 class="text-center text-4xl font-bold py-10 relative">
+            Equipment In Stock
+            <img
+                src="{{ asset('asset/images/underline/underline.png') }}"
+                class="absolute left-1/2 transform -translate-x-1/2 bottom-1 w-1/6 h-9"
+                alt="Underline"
+                srcset=""
+            />
+        </h1>
+        <section
+            id="equipment-stock"
+            class="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8"
+        >
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Sample Equipment Item with Hover Animation -->
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 1"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 1 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 2"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 2</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 2 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                    >
+                        <div
+                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg"
+                        >
+                            <img
+                                src="{{
+                                    asset(
+                                        'asset/images/equipment-images/equipment-1.png'
+                                    )
+                                }}"
+                                alt="Equipment 3"
+                                class="w-full h-48 object-cover rounded-md mb-4"
+                            />
+                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                            <p class="text-gray-700">
+                                Description of equipment 3 goes here. It's high
+                                quality and very reliable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Brand Slider Section -->
+
+        <section class="slider mx-auto mt-10 max-w-7xl">
+            <div class="slider-track">
+                <!-- Brand Logos -->
+                <img src="{{asset('asset/images/brands/logo1.png')}}" alt="Brand 1" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo2.png')}}" alt="Brand 2" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo3.png')}}" alt="Brand 3" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo4.png')}}" alt="Brand 4" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo5.png')}}" alt="Brand 5" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo6.png')}}" alt="Brand 6" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo8.png')}}" alt="Brand 1" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo9.png')}}" alt="Brand 2" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo10.png')}}" alt="Brand 3" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo11.png')}}" alt="Brand 4" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo12.png')}}" alt="Brand 5" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo13.png')}}" alt="Brand 6" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo14.png')}}" alt="Brand 7" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo15.png')}}" alt="Brand 1" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo16.png')}}" alt="Brand 2" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo17.png')}}" alt="Brand 3" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo18.png')}}" alt="Brand 4" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo19.png')}}" alt="Brand 5" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo20.png')}}" alt="Brand 6" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo21.png')}}" alt="Brand 7" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo22.png')}}" alt="Brand 7" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo23.png')}}" alt="Brand 7" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo24.png')}}" alt="Brand 7" class="slider-item h-40">
+                <img src="{{asset('asset/images/brands/logo25.png')}}" alt="Brand 7" class="slider-item h-40">
+              </div>
+
+        </section>
+
+        <!-- Scroll to Top Button -->
+        <x-back-top-btn />
+
+        <!-- Mobile Menu -->
+        <div
+            class="sm:hidden hidden fixed inset-0 bg-black bg-opacity-75 transition-opacity"
+            id="mobile-menu"
+        >
+            <div class="flex flex-col items-center px-2 pt-20 pb-3 space-y-1">
+                <a
+                    href="{{ route('dashboard') }}"
+                    class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+                    >Dashboard</a
+                >
+                <a
+                    href="#"
+                    class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+                    >Projects</a
+                >
+                <a
+                    href="#"
+                    class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+                    >Tasks</a
+                >
+                <a
+                    href="#"
+                    class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+                    >Calendar</a
+                >
+                <a
+                    href="#"
+                    class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+                    >Reports</a
+                >
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button
+                        type="submit"
+                        class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+                    >
+                        <svg
+                            class="h-5 w-5 inline-block mr-2 text-gray-300"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M16.707 7.707a1 1 0 01-1.414 0L12 4.414V15a1 1 0 11-2 0V4.414L8.707 7.707a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 010 1.414z"
+                                clip-rule="evenodd"
+                            />
+                            <path
+                                fill-rule="evenodd"
+                                d="M3 13a1 1 0 011-1h10a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {{-- Footer Section Start --}}
+        <x-footer />
+        {{-- Footer Section End --}}
+    </div>
+
+    @push('script')
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const scrollToTopButton = document.getElementById("scroll-to-top");
+
+            // Add Click Event to Mobile Menu Button
+            menuButton.addEventListener("click", () => {
+                const isExpanded =
+                    menuButton.getAttribute("aria-expanded") === "true";
+                menuButton.setAttribute("aria-expanded", !isExpanded);
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            // Scroll to Top Button Functionality
+            scrollToTopButton.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+
+            // Show main content after 5 seconds
+            setTimeout(() => {
+                const preloader = document.getElementById("preloader");
+                const content = document.getElementById("main-content");
+
+                preloader.style.display = "none"; // Hide the preloader
+                content.style.display = "block"; // Show the content
+                content.style.opacity = "1"; // Show the content with fade-in effect
+
+                // Trigger scroll animation for equipment items
+                const items = document.querySelectorAll(".item");
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.remove("opacity-0", "translate-y-10");
+                    }, index * 300); // Stagger animation
+                });
+            }, 5000); // 5000 milliseconds = 5 seconds
+
+            // Scrolling effect for the navbar
+            window.addEventListener("scroll", () => {
+                const navbar = document.getElementById("navbar");
+                const offset = window.scrollY;
+
+                if (offset > 0) {
+                    navbar.classList.add("shadow-md");
+                } else {
+                    navbar.classList.remove("shadow-md");
+                }
+
+                // Show/hide the scroll-to-top button based on scroll position
+                if (offset > 300) {
+                    scrollToTopButton.classList.remove("hidden");
+                } else {
+                    scrollToTopButton.classList.add("hidden");
+                }
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    const section = document.querySelector('.about-section');
+
+    const options = {
+        root: null, // Use the viewport as the root
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Add the visible class when in view
+                observer.unobserve(entry.target); // Stop observing after adding class
+            }
+        });
+    }, options);
+
+    observer.observe(section); // Observe the About section
+});
+    </script>
+    @endpush
+</x-app-layout>
