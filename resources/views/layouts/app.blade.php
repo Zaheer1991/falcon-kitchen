@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="Welcome to {{ env('APP_NAME') }}, your ultimate destination for amazing services and experiences.">
+    <meta name="description" content="Discover high-quality kitchen equipment at {{ env('APP_NAME') }}. From commercial ovens to durable cookware, we provide everything to elevate your culinary space. Shop now for the best prices and expert support!">
+    <meta name="keywords" content="kitchen equipment, commercial kitchen tools, professional cookware, kitchen appliances, cooking equipment, restaurant supplies, high-quality kitchen tools, culinary equipment, durable cookware, affordable kitchen tools">
+
     <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
     
     @php
