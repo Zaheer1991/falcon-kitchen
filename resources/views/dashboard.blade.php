@@ -32,7 +32,7 @@
                 class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50"
             >
                 <h1
-                    class="text-3xl sm:text-4xl font-bold text-white text-center"
+                    class="text-3xl sm:text-4xl font-bold text-white text-center italic"
                 >
                     Welcome to FalconProska
                 </h1>
@@ -72,10 +72,10 @@
                 </div>
                 <div class="about-content w-full lg:w-1/2">
                     <h2 class="text-3xl lg:text-4xl font-bold mb-5">About Us</h2> <!-- Adjusted text size for mobile -->
-                    <p class="text-base lg:text-lg mb-5"> <!-- Adjusted text size for mobile -->
+                    <p class="text-base lg:text-lg mb-5 text-[#8395a7]"> <!-- Adjusted text size for mobile -->
                         Welcome to our website! We are dedicated to providing the highest quality of service and value to our clients. Our team is committed to excellence and we strive to exceed your expectations.
                     </p>
-                    <p class="text-base lg:text-lg"> <!-- Adjusted text size for mobile -->
+                    <p class="text-base lg:text-lg text-[#8395a7]"> <!-- Adjusted text size for mobile -->
                         With years of experience in the industry, we are here to cater to your needs and ensure that you have a memorable experience. Get in touch with us today to learn more about what we can do for you!
                     </p>
                 </div>
