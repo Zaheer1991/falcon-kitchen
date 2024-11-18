@@ -10,12 +10,10 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Terminado&display=swap" rel="stylesheet">
         {{-- Custom Css --}}
         <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
-        {{-- Slick Carousel --}}
-        <link rel="stylesheet" type="text/css" href="path/to/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="path/to/slick-theme.css"/>
+        {{-- Aos Cdn --}}
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -28,7 +26,10 @@
 
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="path/to/slick.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
 @stack('script')

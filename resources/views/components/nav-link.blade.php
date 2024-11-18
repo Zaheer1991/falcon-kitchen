@@ -22,7 +22,7 @@
                             >Home</a
                         >
                         <a
-                            href="#"
+                            href="{{route('service')}}"
                             class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                             >Our Services</a
                         >

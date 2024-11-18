@@ -1,123 +1,6 @@
 <x-app-layout>
     @push('style')
-        <style>
-            .about-section {
-    position: relative;
-    overflow: hidden;
-    opacity: 0; /* Initially hidden for animation */
-    transform: translateY(20px); /* Slightly push down for animation */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation effects */
-}
-
-.about-section.visible {
-    opacity: 1; /* Visible when scrolled into view */
-    transform: translateY(0); /* Reset position */
-}
-
-.about-image {
-    position: relative; /* Position relative for child elements */
-}
-
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Circle shape for the text/logo */
-.falconproksa-circle {
-    position: absolute;
-    bottom: -40px; /* Positioning it at the bottom */
-    right: -20px; /* Positioning it at the right */
-    width: 100px; /* Circle size */
-    height: 100px; /* Circle size */
-    background-color: #ff5722; /* Circle Color */
-    border-radius: 50%; /* Circular shape */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: moveCircle 5s linear infinite; /* Infinite movement */
-}
-
-.falconproksa-text {
-    color: white; /* Text Color */
-    font-weight: bold; /* Text weight */
-    text-align: center; /* Center text */
-}
-@media (max-width: 640px) {
-
-    .banner-card{
-        display: none
-    }
-    .about-image,
-    .about-content {
-        width: 100%; /* Stack elements */
-        padding: 0 1rem; /* Optional padding */
-    }
-
-    .about-image {
-        margin-bottom: 1.5rem; /* Extra space between image and content */
-    }
-
-    .falconproksa-circle {
-        display: none; /* Hide on mobile */
-    }
-    .about-content h2 {
-        font-size: 1.875rem; /* Adjust h2 size for mobile (3xl) */
-    }
-
-    .about-content p {
-        font-size: 1rem; /* Adjust paragraph size for mobile (base) */
-    }
-}
-/* Move Circle Animation */
-@keyframes moveCircle {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(-10px, 10px); /* Move slightly */
-    }
-    50% {
-        transform: translate(0, 0);
-    }
-    75% {
-        transform: translate(10px, -10px); /* Move back */
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-/* Keyframes for infinite scrolling */
-@keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-200%);
-      }
-    }
-
-    .slider {
-      display: flex;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .slider-track {
-      display: flex;
-      animation: scroll 20s linear infinite;
-    }
-
-    .slider-item {
-      flex-shrink: 0;
-      width: auto;
-      margin-right: 2rem;
-    }
-
-
-
-        </style>
+       <link rel="stylesheet" href="{{asset('asset/css/dashboard.css')}}">
     @endpush
     <!-- Preloader -->
     <div
@@ -201,7 +84,8 @@
 
 
         <!-- Equipment in Stock Section -->
-        <h1 class="text-center text-4xl font-bold py-10 relative">
+        <h1 class="text-center text-4xl font-bold py-10 relative" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
             Equipment In Stock
             <img
                 src="{{ asset('asset/images/underline/underline.png') }}"
@@ -520,85 +404,6 @@
     </div>
 
     @push('script')
-    <script>
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuButton = document.getElementById("mobile-menu-button");
-            const mobileMenu = document.getElementById("mobile-menu");
-            const scrollToTopButton = document.getElementById("scroll-to-top");
-
-            // Add Click Event to Mobile Menu Button
-            menuButton.addEventListener("click", () => {
-                const isExpanded =
-                    menuButton.getAttribute("aria-expanded") === "true";
-                menuButton.setAttribute("aria-expanded", !isExpanded);
-                mobileMenu.classList.toggle("hidden");
-            });
-
-            // Scroll to Top Button Functionality
-            scrollToTopButton.addEventListener("click", () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                });
-            });
-
-            // Show main content after 5 seconds
-            setTimeout(() => {
-                const preloader = document.getElementById("preloader");
-                const content = document.getElementById("main-content");
-
-                preloader.style.display = "none"; // Hide the preloader
-                content.style.display = "block"; // Show the content
-                content.style.opacity = "1"; // Show the content with fade-in effect
-
-                // Trigger scroll animation for equipment items
-                const items = document.querySelectorAll(".item");
-                items.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.remove("opacity-0", "translate-y-10");
-                    }, index * 300); // Stagger animation
-                });
-            }, 5000); // 5000 milliseconds = 5 seconds
-
-            // Scrolling effect for the navbar
-            window.addEventListener("scroll", () => {
-                const navbar = document.getElementById("navbar");
-                const offset = window.scrollY;
-
-                if (offset > 0) {
-                    navbar.classList.add("shadow-md");
-                } else {
-                    navbar.classList.remove("shadow-md");
-                }
-
-                // Show/hide the scroll-to-top button based on scroll position
-                if (offset > 300) {
-                    scrollToTopButton.classList.remove("hidden");
-                } else {
-                    scrollToTopButton.classList.add("hidden");
-                }
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-    const section = document.querySelector('.about-section');
-
-    const options = {
-        root: null, // Use the viewport as the root
-        threshold: 0.1 // Trigger when 10% of the section is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('visible'); // Add the visible class when in view
-                observer.unobserve(entry.target); // Stop observing after adding class
-            }
-        });
-    }, options);
-
-    observer.observe(section); // Observe the About section
-});
-    </script>
+        <script src="{{asset("asset/dashboard.js")}}"></script>
     @endpush
 </x-app-layout>
