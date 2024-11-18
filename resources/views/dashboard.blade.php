@@ -1,7 +1,4 @@
 <x-app-layout>
-    @push('style')
-       <link rel="stylesheet" href="{{asset('asset/css/dashboard.css')}}">
-    @endpush
     <!-- Preloader -->
     <div
         id="preloader"
@@ -403,7 +400,7 @@
         {{-- Footer Section End --}}
     </div>
 
-    @push('script')
+    {{-- @push('script')
         <script src="{{asset("asset/dashboard.js")}}"></script>
-    @endpush
+    @endpush --}}
 </x-app-layout>

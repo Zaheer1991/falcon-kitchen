@@ -1,3 +1,211 @@
-body {
-    font-family: 'Terminado', sans-serif; /* Use the Terminado font */
+/* ==========================================
+   Universal Styles
+   ========================================== */
+   * {
+    font-family: "Geist Mono", monospace; /* Monospace font for a modern look */
+    font-optical-sizing: auto; /* Enable optical sizing for better font rendering */
+    font-weight: 500; /* Medium font weight */
+    font-style: normal; /* Default font style */
+}
+
+/* ==========================================
+   About Section Styles
+   ========================================== */
+.about-section {
+    position: relative; /* Positioning for child elements */
+    overflow: hidden; /* Hide content that overflows */
+    opacity: 0; /* Initially hidden for scroll animation */
+    transform: translateY(20px); /* Start slightly pushed down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth fade-in and position reset */
+}
+
+.about-section.visible {
+    opacity: 1; /* Fully visible when in view */
+    transform: translateY(0); /* Reset transform */
+}
+
+.about-image {
+    position: relative; /* For positioning child elements */
+}
+
+.about-image img {
+    max-width: 100%; /* Ensure image fits container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Add rounded corners */
+}
+
+/* ==========================================
+   Circular Element with Text/Logo
+   ========================================== */
+.falconproksa-circle {
+    position: absolute; /* Position relative to parent */
+    bottom: -40px; /* Place at the bottom */
+    right: -20px; /* Place towards the right */
+    width: 100px; /* Circle dimensions */
+    height: 100px; 
+    background-color: #ff5722; /* Circle background color */
+    border-radius: 50%; /* Circular shape */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    animation: moveCircle 5s linear infinite; /* Continuous subtle movement */
+}
+
+.falconproksa-text {
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center-align text */
+}
+
+/* ==========================================
+   Responsive Adjustments for Small Screens
+   ========================================== */
+@media (max-width: 640px) {
+    .banner-card {
+        display: none; /* Hide banner card on mobile */
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%; /* Make elements stack */
+        padding: 0 1rem; /* Add spacing */
+    }
+
+    .about-image {
+        margin-bottom: 1.5rem; /* Add space below the image */
+    }
+
+    .falconproksa-circle {
+        display: none; /* Hide the circular element on mobile */
+    }
+
+    .about-content h2 {
+        font-size: 1.875rem; /* Adjust heading size for smaller screens */
+    }
+
+    .about-content p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
+
+/* ==========================================
+   Animations
+   ========================================== */
+
+/* Subtle Movement for Circle */
+@keyframes moveCircle {
+    0%, 50%, 100% {
+        transform: translate(0, 0); /* Default position */
+    }
+    25% {
+        transform: translate(-10px, 10px); /* Slight movement */
+    }
+    75% {
+        transform: translate(10px, -10px); /* Reverse movement */
+    }
+}
+
+/* Infinite Horizontal Scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    100% {
+        transform: translateX(-200%); /* Move completely out of view */
+    }
+}
+
+/* ==========================================
+   Slider Styles
+   ========================================== */
+.slider {
+    display: flex; /* Flexbox layout */
+    overflow: hidden; /* Hide overflowing content */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.slider-track {
+    display: flex; /* Flex layout for items */
+    animation: scroll 20s linear infinite; /* Smooth continuous scrolling */
+}
+
+.slider-item {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    width: auto; /* Natural width */
+    margin-right: 2rem; /* Spacing between items */
+}
+
+/* ==========================================
+   Swiper Styles
+   ========================================== */
+.swiper {
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    position: relative; /* For positioning children */
+}
+
+.swiper-slide {
+    display: flex; /* Center content */
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Text size */
+    color: white; /* Text color */
+    position: relative; /* For animations */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth fade and scale */
+    opacity: 0; /* Initially invisible */
+    transform: scale(0.95); /* Slightly scaled down */
+}
+
+.swiper-slide.active {
+    opacity: 1; /* Fully visible when active */
+    transform: scale(1); /* Restore scale */
+}
+
+.swiper-slide img {
+    position: absolute; /* Cover the entire slide */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers area */
+    z-index: 1; /* Place behind content */
+}
+
+.swiper-slide .content {
+    position: relative; /* On top of the image */
+    z-index: 2;
+    text-align: center; /* Center align content */
+    padding: 20px; /* Add spacing */
+}
+
+/* ==========================================
+   Service Card Styles
+   ========================================== */
+.service-card {
+    position: relative; /* For overlay positioning */
+    overflow: hidden; /* Hide overflowing overlay */
+}
+
+.sliding-overlay {
+    position: absolute; /* Position on top of the card */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Full height overlay */
+    background-color: rgba(59, 130, 246, 0.9); /* Semi-transparent blue */
+    transform: translateY(100%); /* Hidden below card */
+    transition: transform 0.4s ease; /* Smooth slide-up effect */
+}
+
+.service-card:hover .sliding-overlay {
+    transform: translateY(0); /* Slide overlay into view on hover */
+}
+
+.bottom-line {
+    position: absolute; /* Stick to bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px; /* Thin line */
+    background-color: #3B82F6; /* Blue color */
 }
