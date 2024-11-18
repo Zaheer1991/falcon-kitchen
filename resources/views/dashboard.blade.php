@@ -304,31 +304,9 @@
         <section class="slider mx-auto mt-10 max-w-7xl">
             <div class="slider-track">
                 <!-- Brand Logos -->
-                <img src="{{asset('asset/images/brands/logo1.png')}}" alt="Brand 1" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo2.png')}}" alt="Brand 2" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo3.png')}}" alt="Brand 3" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo4.png')}}" alt="Brand 4" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo5.png')}}" alt="Brand 5" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo6.png')}}" alt="Brand 6" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo8.png')}}" alt="Brand 1" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo9.png')}}" alt="Brand 2" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo10.png')}}" alt="Brand 3" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo11.png')}}" alt="Brand 4" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo12.png')}}" alt="Brand 5" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo13.png')}}" alt="Brand 6" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo14.png')}}" alt="Brand 7" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo15.png')}}" alt="Brand 1" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo16.png')}}" alt="Brand 2" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo17.png')}}" alt="Brand 3" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo18.png')}}" alt="Brand 4" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo19.png')}}" alt="Brand 5" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo20.png')}}" alt="Brand 6" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo21.png')}}" alt="Brand 7" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo22.png')}}" alt="Brand 7" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo23.png')}}" alt="Brand 7" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo24.png')}}" alt="Brand 7" class="slider-item h-40">
-                <img src="{{asset('asset/images/brands/logo25.png')}}" alt="Brand 7" class="slider-item h-40">
-              </div>
+                @foreach ($logos as $logo)
+                <img src="{{ asset('asset/images/brands/'.$logo.'.png') }}" alt="Brand {{ $loop->iteration }}" class="slider-item h-40">
+                @endforeach
 
         </section>
 
@@ -399,8 +377,4 @@
         <x-footer />
         {{-- Footer Section End --}}
     </div>
-
-    {{-- @push('script')
-        <script src="{{asset("asset/dashboard.js")}}"></script>
-    @endpush --}}
 </x-app-layout>
