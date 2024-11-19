@@ -1,4 +1,4 @@
-<nav class="bg-white border-b border-gray-100 fixed top-0 w-full z-20 shadow-md transition-transform duration-200 ease-in-out"
+<nav class=" border-gray-100 fixed top-0 w-full z-20 shadow-md transition-transform duration-200 ease-in-out backdrop-blur-md bg-opacity-30 text-white" 
     id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -10,27 +10,28 @@
                 </div>
             </div>
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <a href="{{ route('dashboard') }}" class="
-                                {{ request()->is('dashboard') ? 'bg-violet-700 text-white' : 'text-gray-700' }}
-                                px-3 py-2 rounded-md text-sm font-medium
-                                hover:text-gray-900 hover:bg-gray-50
-                                transition-colors duration-200
-                            ">
+                <a href="{{ route('dashboard') }}" 
+                   class="{{ request()->is('dashboard') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : ' px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
                     Home
                 </a>
-                <a href="{{route('service')}}"
-                    class="{{ request()->is('services') ? 'bg-violet-700 text-white' : 'text-gray-700' }} px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Our
-                    Services</a>
-                <a href="{{route('client')}}"
-                    class="{{ request()->is('clients') ? 'bg-violet-700 text-white' : 'text-gray-700' }} px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Our
-                    Clients</a>
-                <a href="{{route('project')}}"
-                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Our
-                    Projects</a>
-                <a href="{{route('product')}}"
-                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Our
-                    Products</a>
+                <a href="{{ route('service') }}" 
+                   class="{{ request()->is('services') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                    Our Services
+                </a>
+                <a href="{{ route('client') }}" 
+                   class="{{ request()->is('clients') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                    Our Clients
+                </a>
+                <a href="{{ route('project') }}" 
+                   class="{{ request()->is('projects') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                    Our Projects
+                </a>
+                <a href="{{ route('product') }}" 
+                   class="{{ request()->is('products') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                    Our Products
+                </a>
             </div>
+            
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

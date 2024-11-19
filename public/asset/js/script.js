@@ -1,3 +1,17 @@
+// Select the navbar
+const navbar = document.getElementById('navbar');
+
+// Add a scroll event listener
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-md', 'bg-opacity-100'); // Solid white background
+        navbar.classList.remove('bg-opacity-30','text-white'); // Remove transparency
+    } else {
+        navbar.classList.remove('bg-white', 'shadow-md', 'bg-opacity-100'); // Restore glassmorphism
+        navbar.classList.add('bg-opacity-30','text-white');
+    }
+});
+
 // Set a timeout to hide the preloader and show the main content
 setTimeout(() => {
     const preloader = document.getElementById("preloader");
