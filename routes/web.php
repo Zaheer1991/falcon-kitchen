@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DashboardController;
 /*
@@ -21,10 +24,9 @@ Route::get('/', function () {
 
 Route::get('/services',[ServiceController::class, 'index'])->name('service');
 Route::get('dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/clients',[ClientController::class, 'index'])->middleware(['auth', 'verified'])->name('client');
+Route::get('/products',[ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('product');
+Route::get('/projects',[ProjectController::class, 'index'])->middleware(['auth', 'verified'])->name('project');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

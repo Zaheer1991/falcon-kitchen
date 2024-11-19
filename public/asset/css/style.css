@@ -87,10 +87,10 @@
         font-size: 1rem; /* Adjust paragraph font size */
     }
 }
-
+    
 /* ==========================================
-   Animations
-   ========================================== */
+    Animations
+    ========================================== */
 
 /* Subtle Movement for Circle */
 @keyframes moveCircle {
