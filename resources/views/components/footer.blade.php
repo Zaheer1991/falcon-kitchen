@@ -39,11 +39,18 @@
             <div class="w-full text-center lg:w-auto lg:text-left col-span-full sm:col-span-4 md:col-span-4 lg:col-span-2">
                 <h4 class="text-lg text-gray-300 font-medium mb-7">Get In Touch</h4>
                 <ul class="text-gray-400 transition-all duration-500">
-                    <li class="mb-6">support@pagedone.com</li>
-                    <li class="mb-6">+91 945 658 3256</li>
-                    <li>61-A, Elm street, Gujarat, India.</li>
+                    <li class="mb-6 flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> support@pagedone.com
+                    </li>
+                    <li class="mb-6 flex items-center">
+                        <i class="fas fa-phone-alt mr-2"></i> +91 945 658 3256
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i> 61-A, Elm street, Gujarat, India.
+                    </li>
                 </ul>
             </div>
+            
             <!--End Col-->
             <div class="w-full text-center lg:w-auto lg:text-left col-span-full sm:order-last sm:col-span-4 md:col-span-4 lg:order-none lg:col-span-1">
                 <h4 class="text-lg text-gray-300 font-medium mb-7">Products</h4>
@@ -53,14 +60,6 @@
                     <li class="mb-6"><a href="javascript:;" class="text-gray-400 hover:text-gray-300">Pricing</a></li>
                     <li class="sm:mb-6"><a href="javascript:;" class="text-gray-400 hover:text-gray-300">Features</a></li>
                 </ul>
-            </div>
-            <!--End Col-->
-            <div class="w-full text-center lg:w-auto lg:text-left col-span-full sm:col-span-4 md:col-span-4 lg:col-span-2">
-                <h4 class="text-lg text-center text-gray-300 font-medium mb-7 lg:text-left">Newsletter</h4>
-                <div class="flex flex-col items-center lg:items-start">
-                    <input type="text" class="w-full h-12 border border-gray-300 rounded-full py-2.5 px-5 shadow-sm text-gray-800 mb-5 text-center lg:text-left placeholder:text-gray-400 focus:outline-none focus:border-gray-500" placeholder="Your email here.."/>
-                    <button type="submit" class="h-11 py-3 px-6 bg-indigo-600 transition-all duration-500 shadow-md rounded-full text-sm text-white font-semibold w-fit hover:bg-indigo-700">Subscribe</button>
-                </div>
             </div>
         </div>
     </div>

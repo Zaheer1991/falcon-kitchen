@@ -126,3 +126,59 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 });
+// Function to animate counting
+ // Function to animate counting
+  // Function to animate counting
+  function animateCounter(id, targetNumber, duration) {
+    const element = document.getElementById(id);
+    let start = 0;
+    const increment = targetNumber / (duration / 10); // Increase per frame (10ms per frame)
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= targetNumber) {
+        element.textContent = targetNumber; // Ensure final value matches the target
+        clearInterval(counter); // Stop animation
+      } else {
+        element.textContent = Math.floor(start); // Display the current number
+      }
+    }, 10); // Update every 10ms
+  }
+
+  // Function to trigger animations when the section is visible
+  function animateCounter(id, targetNumber, duration) {
+    const element = document.getElementById(id);
+    let start = 0;
+    const increment = targetNumber / (duration / 10); // Increase per frame (10ms per frame)
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= targetNumber) {
+        element.textContent = targetNumber; // Ensure final value matches the target
+        clearInterval(counter); // Stop animation
+      } else {
+        element.textContent = Math.floor(start); // Display the current number
+      }
+    }, 10); // Update every 10ms
+  }
+
+  // Function to trigger animations when the section is visible
+  function handleIntersection(entries) {
+    const entry = entries[0]; // Get the first entry
+    if (entry.isIntersecting) {
+      animateCounter("projects-completed", 120, 2000); // Ends at 120 in 2 seconds
+      animateCounter("clients", 85, 2000); // Ends at 85 in 2 seconds
+      animateCounter("experience", 10, 2000); // Ends at 10 in 2 seconds
+      animateCounter("professionals", 50, 2000); // Ends at 50 in 2 seconds
+      observer.unobserve(entry.target); // Stop observing once triggered
+    }
+  }
+
+  // Setup Intersection Observer
+  const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.5, // Trigger when 50% of the section is visible
+  });
+
+  // Observe the count-up section
+  const countSection = document.getElementById("count-section");
+  observer.observe(countSection);

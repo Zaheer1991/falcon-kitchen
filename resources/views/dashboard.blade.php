@@ -235,6 +235,9 @@
         <!-- Scroll to Top Button -->
         <x-back-top-btn />
 
+        <!-- Whatsapp Icon -->
+        <x-whatsapp-icon />
+
         <!-- Mobile Menu -->
         <div class="sm:hidden hidden fixed inset-0 bg-black bg-opacity-75 transition-opacity" id="mobile-menu">
             <div class="flex flex-col items-center px-2 pt-20 pb-3 space-y-1">

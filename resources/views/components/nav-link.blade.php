@@ -11,23 +11,23 @@
             </div>
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <a href="{{ route('dashboard') }}" 
-                   class="{{ request()->is('dashboard') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : ' px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                   class="{{ request()->is('dashboard') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : ' px-3 py-2 rounded-md text-sm font-medium' }}">
                     Home
                 </a>
                 <a href="{{ route('service') }}" 
-                   class="{{ request()->is('services') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                   class="{{ request()->is('services') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium' }}">
                     Our Services
                 </a>
                 <a href="{{ route('client') }}" 
-                   class="{{ request()->is('clients') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                   class="{{ request()->is('clients') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium' }}">
                     Our Clients
                 </a>
                 <a href="{{ route('project') }}" 
-                   class="{{ request()->is('projects') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                   class="{{ request()->is('projects') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium' }}">
                     Our Projects
                 </a>
                 <a href="{{ route('product') }}" 
-                   class="{{ request()->is('products') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium hover:text-gray-900 hover:bg-gray-50' }}">
+                   class="{{ request()->is('products') ? 'bg-violet-700 text-white px-3 py-2 rounded-md text-sm font-medium' : 'px-3 py-2 rounded-md text-sm font-medium' }}">
                     Our Products
                 </a>
             </div>

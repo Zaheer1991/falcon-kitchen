@@ -193,7 +193,7 @@
     left: 0;
     right: 0;
     height: 100%; /* Full height overlay */
-    background-color: rgba(59, 130, 246, 0.9); /* Semi-transparent blue */
+    background-color: #7a9f4b; /* Semi-transparent blue */
     transform: translateY(100%); /* Hidden below card */
     transition: transform 0.4s ease; /* Smooth slide-up effect */
 }
@@ -208,5 +208,51 @@
     left: 0;
     right: 0;
     height: 4px; /* Thin line */
-    background-color: #3B82F6; /* Blue color */
+    background-color: #7a9f4b; /* Blue color */
 }
+
+/* ==========================================
+   Whatsapp Icon Style
+   ========================================== */
+   .whatsapp-icon {
+    position: fixed;
+    bottom: 70px; /* Adjust as needed */
+    right: 14px; /* Adjust as needed */
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-icon svg {
+    fill: #fff;
+}
+
+/* ==========================================
+   Whatsapp Icon Style
+   ========================================== */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
