@@ -37,62 +37,31 @@
         
         <!-- Client Section -->
         <div class="py-20 bg-gray-100">
+            <h2 class="text-center py-7 text-2xl sm:text-3xl font-bold mb-6 bg-[#b7bac2]">Our Clients</h2>
             <div class="max-w-6xl mx-auto px-6 text-center">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-6">Our Clients</h2>
                 <p class="text-gray-600 mb-8">
                     We proudly collaborate with diverse industries to deliver exceptional solutions tailored to their needs.
                 </p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-                    <!-- Royal Project -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Royal Project" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Royal Project</p>
-                    </div>
-                    <!-- Restaurant -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Restaurant" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Restaurant</p>
-                    </div>
-                    <!-- Coffee Shop -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Coffee Shop" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Coffee Shop</p>
-                    </div>
-                    <!-- Hotel -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Hotel" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Hotel</p>
-                    </div>
-                    <!-- Hospital -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Hospital" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Hospital</p>
-                    </div>
-                    <!-- Cold Room -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Cold Room" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Cold Room</p>
-                    </div>
-                    <!-- Labour Camp -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Labour Camp" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Labour Camp</p>
-                    </div>
-                    <!-- Cloud Kitchen -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Cloud Kitchen" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Cloud Kitchen</p>
-                    </div>
-                    <!-- Bakery -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://via.placeholder.com/150" alt="Bakery" class="h-20 object-contain mb-4" />
-                        <p class="text-gray-700 font-medium">Bakery</p>
-                    </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+                    @foreach ($clients as $client)
+                        <x-clients-card :image="$client['image']" :alt="$client['alt']" />
+                    @endforeach
                 </div>
             </div>
         </div>
-        
-        
+
+        <!-- Scroll to Top Button -->
+    <x-back-top-btn />
+
+    <!-- Whatsapp Icon -->
+    <x-whatsapp-icon />
+
+    <!-- Mobile Menu -->
+    <x-mobile-menu />
+
+    {{-- Footer Starts Here --}}
+    <x-footer />
+    {{-- Footer End Here --}}
     </div>
     <!-- Main Content Section End -->
 </x-app-layout>
