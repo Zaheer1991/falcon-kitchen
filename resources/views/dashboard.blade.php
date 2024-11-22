@@ -10,7 +10,7 @@
         <x-nav-link />
 
         <!-- Welcome Section -->
-        <div class="relative h-screen overflow-hidden flex items-center justify-center lg:px-8">
+        <div class="relative h-screen overflow-hidden flex items-center justify-center lg:px-8 px-6">
             <img src="{{ asset('asset/images/banner/banner-image1.jpg') }}" alt="Banner"
                 class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
@@ -37,8 +37,67 @@
             </div>
         </div>
 
+        <div class="py-16 bg-gray-50 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 relative inline-block">
+                    What Drives Us
+                    <span
+                        class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-32 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"></span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 ">
+                    <!-- Mission Card -->
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
+                            <div
+                                class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-bullseye text-3xl"></i> <!-- Replace with your preferred icon -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
+                            <p class="text-gray-600">
+                                To deliver top-notch hospitality equipment solutions that meet and exceed the expectations
+                                of our clients worldwide.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Vision Card -->
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
+                            <div
+                                class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-eye text-3xl"></i> <!-- Replace with your preferred icon -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Vision</h3>
+                            <p class="text-gray-600">
+                                To be the global leader in providing sustainable, innovative, and cutting-edge solutions for the hospitality industry.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Values Card -->
+                    <div
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
+                            <div
+                                class="w-16 h-16 bg-yellow-100 text-yellow-500 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-handshake text-3xl"></i> <!-- Replace with your preferred icon -->
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Our Values</h3>
+                            <p class="text-gray-600">
+                                Integrity, customer focus, innovation, and excellence are the core values that drive
+                                everything we do.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
         <!-- About Us Section -->
-        <section class="about-section py-20 bg-gray-100">
+        <section class="about-section py-20 bg-gray-100 px-6">
             <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start relative">
                 <div class="about-image w-full lg:w-1/2 pr-0 lg:pr-10 mb-8 lg:mb-0 relative">
                     <img src="{{asset('asset/images/banner/banner-four-image.jpg')}}" alt="About Us Image"
@@ -59,13 +118,12 @@
             </div>
         </section>
 
-
         <!-- Equipment in Stock Section -->
-        <h1 class="text-center text-4xl font-bold py-10 relative bg-[#b7bac2]" data-aos="fade-up"
+        <h1 class="text-center text-4xl font-bold py-10 relative bg-[#b7bac2] px-6" data-aos="fade-up"
             data-aos-anchor-placement="top-bottom">
             Equipment In Stock
         </h1>
-        <section id="equipment-stock" class="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8">
+        <section id="equipment-stock" class="py-20 bg-gray-50 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Sample Equipment Item with Hover Animation -->
@@ -93,10 +151,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 2" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 2</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 2 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -109,10 +167,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -125,10 +183,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -141,10 +199,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -157,10 +215,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -173,10 +231,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -189,10 +247,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -205,10 +263,10 @@
                                     asset(
                                         'asset/images/equipment-images/equipment-1.png'
                                     )
-                                }}" alt="Equipment 3" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 3</h3>
+                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 class="text-lg font-semibold">Equipment 1</h3>
                             <p class="text-gray-700">
-                                Description of equipment 3 goes here. It's high
+                                Description of equipment 1 goes here. It's high
                                 quality and very reliable.
                             </p>
                         </div>
@@ -216,20 +274,20 @@
                 </div>
             </div>
         </section>
-        <!-- Brand Slider Section -->
 
-        <h1 class="text-center text-4xl font-bold py-10 relative bg-[#b7bac2]" data-aos="fade-up"
+        <!-- Brand Slider Section -->
+        <h1 class="text-center text-4xl font-bold py-10 relative bg-[#b7bac2] px-6" data-aos="fade-up"
             data-aos-anchor-placement="top-bottom">
             Our Brands
         </h1>
-        <section class="slider mx-auto mt-10 max-w-7xl">
+        <section class="slider mx-auto mt-10 max-w-7xl px-6">
             <div class="slider-track">
                 <!-- Brand Logos -->
                 @foreach ($logos as $logo)
                 <img src="{{ asset('asset/images/brands/'.$logo.'.png') }}" alt="Brand {{ $loop->iteration }}"
                     class="slider-item h-40">
                 @endforeach
-
+            </div>
         </section>
 
         <!-- Scroll to Top Button -->
