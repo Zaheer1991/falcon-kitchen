@@ -36,13 +36,13 @@
         </div>
         
         <!-- Client Section -->
-        <div class="py-20 bg-gray-100">
+        <div class="py-16 bg-gray-100" data-aos="fade-up">
             <h2 class="text-center py-7 text-2xl sm:text-3xl font-bold mb-6 bg-[#b7bac2]">Our Clients</h2>
-            <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="max-w-7xl mx-auto px-4 text-center">
                 <p class="text-gray-600 mb-8">
                     We proudly collaborate with diverse industries to deliver exceptional solutions tailored to their needs.
                 </p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8" data-aos="fade-left">
                     @foreach ($clients as $client)
                         <x-clients-card :image="$client['image']" :alt="$client['alt']" />
                     @endforeach

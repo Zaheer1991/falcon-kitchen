@@ -63,7 +63,14 @@
     </div>
 </section>
 
+    <!-- Scroll to Top Button -->
+    <x-back-top-btn />
 
+    <!-- Whatsapp Icon -->
+    <x-whatsapp-icon />
+
+    <!-- Mobile Menu -->
+    <x-mobile-menu />
         <!-- Footer Section -->
         <x-footer />
     </div>

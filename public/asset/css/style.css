@@ -8,6 +8,58 @@
     font-weight: 500; /* Medium font weight */
     font-style: normal; /* Default font style */
 }
+
+
+#count-section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  
+  #count-section .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .text-gray-300 {
+    stroke: #D1D5DB; /* Gray color for the background circle */
+  }
+  
+  .text-indigo-600 {
+    stroke: #4C51BF; /* Indigo color for progress circle */
+  }
+  
+  .text-green-600 {
+    stroke: #48BB78; /* Green color for progress circle */
+  }
+  
+  .text-blue-600 {
+    stroke: #3182CE; /* Blue color for progress circle */
+  }
+  
+  .text-purple-600 {
+    stroke: #9B2C2C; /* Purple color for progress circle */
+  }
+  
+  #projects-completed-bar {
+    transition: stroke-dashoffset 2s ease-out;
+  }
+  
+  #clients-bar {
+    transition: stroke-dashoffset 2s ease-out;
+  }
+  
+  #experience-bar {
+    transition: stroke-dashoffset 2s ease-out;
+  }
+  
+  #professionals-bar {
+    transition: stroke-dashoffset 2s ease-out;
+  }
+  
+
+
+
+
 .swiper-button-next::after, .swiper-rtl .swiper-button-prev::after{
     display: none !important;
 }

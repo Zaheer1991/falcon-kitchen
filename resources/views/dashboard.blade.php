@@ -10,7 +10,7 @@
         <x-nav-link />
 
         <!-- Welcome Section -->
-        <div class="relative h-screen overflow-hidden flex items-center justify-center lg:px-8 px-6">
+        <div class="relative h-screen overflow-hidden flex items-center justify-center lg:px-8 px-6" data-aos="fade-up">
             <img src="{{ asset('asset/images/banner/banner-image1.jpg') }}" alt="Banner"
                 class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
@@ -25,7 +25,8 @@
 
             <!-- Card on the Left Side -->
             <div
-                class="absolute left-6 top-1/2 transform -translate-y-1/2 z-10 max-w-sm bg-black text-white rounded-lg shadow-lg p-5 banner-card">
+                class="absolute left-6 top-1/2 transform -translate-y-1/2 z-10 max-w-sm bg-black text-white rounded-lg shadow-lg p-5 banner-card"
+                data-aos="fade-left">
                 <h2 class="text-xl font-bold">Our Mission</h2>
                 <p class="mt-2">
                     At FalconProska, we strive to provide our clients with
@@ -38,16 +39,17 @@
         </div>
 
         <div class="py-16 bg-gray-50 px-6">
-            <div class="max-w-7xl mx-auto text-center">
+            <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 relative inline-block">
                     What Drives Us
                     <span
                         class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-32 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"></span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 ">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <!-- Mission Card -->
                     <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="100">
                         <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
                             <div
                                 class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mb-4">
@@ -60,10 +62,11 @@
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Vision Card -->
                     <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="200">
                         <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
                             <div
                                 class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-4">
@@ -75,10 +78,11 @@
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Values Card -->
                     <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="300">
                         <div class="flex flex-col items-center bg-white rounded-lg shadow-md p-6">
                             <div
                                 class="w-16 h-16 bg-yellow-100 text-yellow-500 rounded-full flex items-center justify-center mb-4">
@@ -91,15 +95,15 @@
                             </p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
 
         <!-- About Us Section -->
-        <section class="about-section py-20 bg-gray-100 px-6">
+        <section class="about-section py-20 bg-gray-100 px-6" data-aos="fade-up">
             <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start relative">
-                <div class="about-image w-full lg:w-1/2 pr-0 lg:pr-10 mb-8 lg:mb-0 relative">
+                <div class="about-image w-full lg:w-1/2 pr-0 lg:pr-10 mb-8 lg:mb-0 relative" data-aos="fade-left">
                     <img src="{{asset('asset/images/banner/banner-four-image.jpg')}}" alt="About Us Image"
                         class="rounded shadow-lg w-full h-auto">
                 </div>
@@ -128,7 +132,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Sample Equipment Item with Hover Animation -->
                     <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
+                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="100">
                         <div
                             class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
                             <img src="{{
@@ -143,134 +148,9 @@
                             </p>
                         </div>
                     </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="item opacity-0 transform translate-y-10 transition-all duration-700 hover:scale-105 hover:shadow-xl">
-                        <div
-                            class="rounded-lg bg-white shadow-md p-5 transition duration-300 ease-in-out hover:shadow-lg">
-                            <img src="{{
-                                    asset(
-                                        'asset/images/equipment-images/equipment-1.png'
-                                    )
-                                }}" alt="Equipment 1" class="w-full h-48 object-cover rounded-md mb-4" />
-                            <h3 class="text-lg font-semibold">Equipment 1</h3>
-                            <p class="text-gray-700">
-                                Description of equipment 1 goes here. It's high
-                                quality and very reliable.
-                            </p>
-                        </div>
-                    </div>
+
+                    <!-- Add similar structure for other equipment items here -->
+                    
                 </div>
             </div>
         </section>
@@ -280,7 +160,7 @@
             data-aos-anchor-placement="top-bottom">
             Our Brands
         </h1>
-        <section class="slider mx-auto mt-10 max-w-7xl px-6">
+        <section class="slider mx-auto mt-10 max-w-7xl px-6" data-aos="fade-up">
             <div class="slider-track">
                 <!-- Brand Logos -->
                 @foreach ($logos as $logo)
@@ -299,8 +179,30 @@
         <!-- Mobile Menu -->
         <x-mobile-menu />
 
-        {{-- Footer Section Start --}}
+        <!-- Footer -->
         <x-footer />
-        {{-- Footer Section End --}}
     </div>
+    @push('script')
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Observer to Trigger About Section Animation
+    const section = document.querySelector('.about-section');
+    const options = {
+        root: null, // Use the viewport as the root
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Add 'visible' class when in view
+                observer.unobserve(entry.target); // Stop observing after animation
+            }
+        });
+    }, options);
+
+    observer.observe(section); // Start observing the About section
+            });
+        </script>
+    @endpush
 </x-app-layout>

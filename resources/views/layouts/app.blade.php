@@ -50,7 +50,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js"></script>
     <script src="{{asset('asset/js/script.js')}}"></script>
     <script>
-        AOS.init();
+        AOS.init({
+        duration: 1200,
+        easing: 'ease-in-out',
+        once: true,
+    });
     </script>
     @stack('script')
 </body>

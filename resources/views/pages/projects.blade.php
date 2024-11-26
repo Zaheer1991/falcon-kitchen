@@ -25,7 +25,7 @@
         </div>
 
         <!-- Projects Section -->
-        <section class="py-16 bg-gray-50">
+        <section class="py-16 bg-gray-50 px-6">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
                     Our Projects
@@ -170,40 +170,51 @@
                 </div>
             </div>
         </section>
+        <!-- Scroll to Top Button -->
+        <x-back-top-btn />
 
+        <!-- Whatsapp Icon -->
+        <x-whatsapp-icon />
+
+        <!-- Mobile Menu -->
+        <x-mobile-menu />
         <!-- Footer -->
         <x-footer />
     </div>
 
     <!-- Scripts -->
-    
-    @push('script')
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script>
-      document.querySelectorAll('.project-card').forEach(card => {
-          card.addEventListener('mousemove', (e) => {
-              const cardRect = card.getBoundingClientRect();
-              const mouseX = e.clientX - cardRect.left;
-              const mouseY = e.clientY - cardRect.top;
-    
-              const centerX = cardRect.width / 2;
-              const centerY = cardRect.height / 2;
-    
-              const deltaX = (mouseX - centerX) / centerX;
-              const deltaY = (mouseY - centerY) / centerY;
-    
-              const tiltX = deltaY * 10; // Control tilt effect (adjust range as needed)
-              const tiltY = deltaX * -10; // Control tilt effect (adjust range as needed)
-    
-              card.style.transform = `perspective(1500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-          });
-    
-          card.addEventListener('mouseleave', () => {
-              card.style.transform = `perspective(1500px) rotateX(0deg) rotateY(0deg)`;
-          });
+ <!-- Add this to your script section -->
+@push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+  window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+  });
+
+  document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+          const cardRect = card.getBoundingClientRect();
+          const mouseX = e.clientX - cardRect.left;
+          const mouseY = e.clientY - cardRect.top;
+
+          const centerX = cardRect.width / 2;
+          const centerY = cardRect.height / 2;
+
+          const deltaX = (mouseX - centerX) / centerX;
+          const deltaY = (mouseY - centerY) / centerY;
+
+          const tiltX = deltaY * 7; // Adjusted tilt range for smooth effect
+          const tiltY = deltaX * -7;
+
+          card.style.transform = `perspective(1500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
       });
-    </script>
-    @endpush
+
+      card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1500px) rotateX(0deg) rotateY(0deg)`;
+      });
+  });
+</script>
+@endpush
 
 </x-app-layout>    
 
