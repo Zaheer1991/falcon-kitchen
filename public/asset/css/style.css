@@ -8,7 +8,22 @@
     font-weight: 500; /* Medium font weight */
     font-style: normal; /* Default font style */
 }
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+button:hover {
+    transform: scale(1.05);
+    background-color: #4b5563;
+}
+
+svg {
+    transition: transform 0.3s ease;
+}
+
+button:hover svg {
+    transform: rotate(360deg);
+}
 
 #count-section {
     padding-left: 4rem;

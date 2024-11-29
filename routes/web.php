@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
@@ -22,16 +23,20 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/services',[ServiceController::class, 'index'])->name('service');
-Route::get('dashboard',[DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/clients',[ClientController::class, 'index'])->middleware(['auth', 'verified'])->name('client');
-Route::get('/products',[ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('product');
-Route::get('/projects',[ProjectController::class, 'index'])->middleware(['auth', 'verified'])->name('project');
+Route::get('/lang/{lang}', function ($lang) {
+    session(['locale' => $lang]);
+    return back();
+})->name('lang.switch');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+    Route::get('/services',[ServiceController::class, 'index'])->name('service');
+    Route::get('dashboard',[DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/clients',[ClientController::class, 'index'])->name('client');
+    Route::get('/products',[ProductController::class, 'index'])->name('product');
+    Route::get('/projects',[ProjectController::class, 'index'])->name('project');
+    });
 
 require __DIR__.'/auth.php';

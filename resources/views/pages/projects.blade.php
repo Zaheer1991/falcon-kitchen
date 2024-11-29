@@ -26,7 +26,7 @@
 
         <!-- Projects Section -->
         <section class="py-16 bg-gray-50 px-6">
-            <div class="container mx-auto px-6 text-center">
+            <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
                     Our Projects
                     <span
@@ -128,7 +128,7 @@
 
         <!-- Project Features Section -->
         <section class="py-16 bg-gray-100">
-            <div class="container mx-auto px-6 text-center">
+            <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
                     Why Choose Us
                     <span

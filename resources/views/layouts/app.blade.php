@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Discover high-quality kitchen equipment at {{ env('APP_NAME') }}. From commercial ovens to durable cookware, we provide everything to elevate your culinary space. Shop now for the best prices and expert support!">
     <meta name="keywords" content="kitchen equipment, commercial kitchen tools, professional cookware, kitchen appliances, cooking equipment, restaurant supplies, high-quality kitchen tools, culinary equipment, durable cookware, affordable kitchen tools">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 
     <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon">
     
